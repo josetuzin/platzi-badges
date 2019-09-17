@@ -13,5 +13,4 @@ const container = document.getElementById('app');
 
 // no olvidar los < /> para transformar el 
 // componente en elemento
-ReactDOM.render(
-    <App/>, container);
+ReactDOM.render(<App />, container);

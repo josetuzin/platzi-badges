@@ -19,7 +19,7 @@ class BadgesList extends React.Component {
                                         </div>
                                         <div className="col-9 badge-container-info">
                                             <h4 className="BadgeList-name">{badge.firstName}{badge.lastName}</h4>
-                                            <span className="BadgeList-twitter"><FontAwesome className="fab fa-twitter" />{badge.twitter}</span><br/>
+                                            <span className="BadgeList-twitter"><FontAwesome className="fab fa-twitter" name="logoTwitter" />{badge.twitter}</span><br/>
                                             <span className="jobTitle">{badge.jobTitle}</span>
                                         </div>
 
