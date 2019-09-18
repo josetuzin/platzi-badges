@@ -24,8 +24,8 @@ async function callApi(endpoint, options = {}) {
 const api = {
   badges: {
     list() {
-      throw new Error('se pudrió todo')
-      // return callApi('/badges');
+      throw new Error('Error 500: Cagó tu server')
+      //return callApi('/badges');
     },
     create(badge) {
       return callApi(`/badges`, {
