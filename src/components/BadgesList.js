@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom'
 import './styles/BadgesList.css'
 import FontAwesome from 'react-fontawesome'
 
+
+import Gravatar from './Gravatar'
+
 class BadgesList extends React.Component {
 
     render() {
@@ -26,10 +29,10 @@ class BadgesList extends React.Component {
                             <div className="container">
                                 <div className="row BadgesListItem">
                                         <div className="col-3 badge-container-avatar">
-                                            <img className="BadgesListItem__avatar" src={badge.avatarUrl} alt="avatar"/>
+                                            <Gravatar className="BadgesListItem__avatar" email={badge.email} alt="Avatar"/>
                                         </div>
                                         <div className="col-9 badge-container-info">
-                                            <h4 className="BadgeList-name">{badge.firstName}{badge.lastName}</h4>
+                                            <h4 className="BadgeList-name">{badge.firstName} {badge.lastName}</h4>
                                             <span className="BadgeList-twitter"><FontAwesome className="fab fa-twitter" name="logoTwitter" />{badge.twitter}</span><br/>
                                             <span className="jobTitle">{badge.jobTitle}</span>
                                         </div>
