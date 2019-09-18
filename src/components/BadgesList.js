@@ -2,10 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 
 import './styles/BadgesList.css'
-import FontAwesome from 'react-fontawesome'
+import BadgesListItem from './BadgesListItem'
 
 
-import Gravatar from './Gravatar'
 
 class BadgesList extends React.Component {
 
@@ -26,23 +25,14 @@ class BadgesList extends React.Component {
                 {this.props.badges.map((badge) => {
                     return (
                         <li key={badge.id}>
-                            <Link className="text-reset text-decoration-none" to={`/badges/${badge.id}/edit`}>
-                                <div className="container">
-                                    <div className="row BadgesListItem">
-                                            <div className="col-3 badge-container-avatar">
-                                                <Gravatar className="BadgesListItem__avatar" email={badge.email} alt="Avatar"/>
-                                            </div>
-                                            <div className="col-9 badge-container-info">
-                                                <h4 className="BadgeList-name">{badge.firstName} {badge.lastName}</h4>
-                                                <span className="BadgeList-twitter"><FontAwesome className="fab fa-twitter" name="logoTwitter" />{badge.twitter}</span><br/>
-                                                <span className="jobTitle">{badge.jobTitle}</span>
-                                            </div>
-
-                                    </div>
-                                </div>
-                            </Link>
+                          <Link
+                            className="text-reset text-decoration-none"
+                            to={`/badges/${badge.id}`}
+                          >
+                            <BadgesListItem badge={badge} />
+                          </Link>
                         </li>
-                    )
+                      )
                 })}
             </ul>
             </div>
