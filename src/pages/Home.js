@@ -36,8 +36,4 @@ export default class Home extends Component {
       </div>
     );
   }
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 9a9b4d8

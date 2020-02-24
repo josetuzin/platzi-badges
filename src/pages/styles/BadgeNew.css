@@ -1,13 +1,4 @@
 .BadgeNew__hero {
-<<<<<<< HEAD
-  width: 100%;
-  padding: 2rem 0;
-  background: url('../../images/stars.svg'), #1B1B25;
-  background-repeat: repeat;
-  margin-bottom: 1rem;
-  color: #ffffff;
-}
-=======
     width: 100%;
     padding: 2rem 0;
     background: url('../../images/stars.svg'), #1B1B25;
@@ -23,4 +14,3 @@
   .BadgeNew__hero-img {
     max-height: 100px
   }
->>>>>>> 9a9b4d8
