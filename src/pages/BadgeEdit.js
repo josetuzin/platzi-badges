@@ -1,69 +1,6 @@
-<<<<<<< HEAD
-import React from 'react';
-
-import './styles/BadgeNew.css';
-import header from '../images/badge-header.svg';
-import Badge from '../components/Badge';
-import BadgeForm from '../components/BadgeForm';
-
-class BadgeNew extends React.Component {
-  state = {
-    form: {
-      firstName: '',
-      lastName: '',
-      email: '',
-      jobTitle: '',
-      twitter: '',
-    },
-  };
-
-  handleChange = e => {
-    this.setState({
-      form: {
-        ...this.state.form,
-        [e.target.name]: e.target.value,
-      },
-    });
-  };
-
-  render() {
-    return (
-      <React.Fragment>
-        <div className="BadgeNew__hero">
-          <img className="img-fluid" src={header} alt="Logo" />
-        </div>
-
-        <div className="container">
-          <div className="row">
-            <div className="col-6">
-              <Badge
-                firstName={this.state.form.firstName}
-                lastName={this.state.form.lastName}
-                twitter={this.state.form.twitter}
-                jobTitle={this.state.form.jobTitle}
-                email={this.state.form.email}
-                avatarUrl="https://www.gravatar.com/avatar/21594ed15d68ace3965642162f8d2e84?d=identicon"
-              />
-            </div>
-
-            <div className="col-6">
-              <BadgeForm
-                onChange={this.handleChange}
-                formValues={this.state.form}
-              />
-            </div>
-          </div>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
-
-export default BadgeNew;
-=======
 import React from 'react'
 
-import './styles/BadgeNew.css'
+import './styles/BadgeEdit.css'
 import header from '../images/platziconf-logo.svg'
 import Badge from '../components/Badge'
 import BadgeForm from '../components/BadgeForm'
@@ -72,10 +9,10 @@ import api from '../api'
 
 
 // página
-class BadgeNew extends React.Component {
+class BadgeEdit extends React.Component {
 
     state = { 
-        loading: false,
+        loading: true,
         error: null,
         form: {
             firstName: '',
@@ -83,6 +20,22 @@ class BadgeNew extends React.Component {
             email: '',
             jobTitle: '',
             twitter: ''
+        }
+    }
+
+    componentDidMount() {
+        this.fetchData()
+    }
+
+    fetchData = async e => {
+        this.setState({ loading: true, error:null })
+
+        try {
+            const data = await api.badges.read(this.props.match.params.badgeId)
+
+            this.setState({ loading: false, form: data })
+        } catch (error) {
+            this.state({ loading: false, error: error })
         }
     }
 
@@ -100,7 +53,7 @@ class BadgeNew extends React.Component {
         this.setState({ loading: true, error: null })
 
         try {
-            await api.badges.create(this.state.form)
+            await api.badges.update(this.props.match.params.badgeId, this.state.form)
             this.setState({ loading: false})
             this.props.history.push('/Badges')
         } catch (error) {
@@ -114,9 +67,9 @@ class BadgeNew extends React.Component {
         }
         return (
             <React.Fragment>
-                <div className="BadgeNew__hero">
+                <div className="BadgeEdit__hero">
                     <img src={header} alt="" 
-                    className="BadgeNew__hero-img img-fluid"/>
+                    className="BadgeEdit__hero-img img-fluid"/>
                 </div>
 
                 <div className="container">
@@ -132,7 +85,7 @@ class BadgeNew extends React.Component {
                             />
                         </div>
                         <div className="col-6">
-                            <h1>New Attendant</h1>
+                            <h1>Edit Attendant</h1>
                             <BadgeForm 
                                 onChange={this.handleChange} 
                                 onSubmit={this.handleSubmit} 
@@ -148,8 +101,5 @@ class BadgeNew extends React.Component {
     }
 }
 
-export default BadgeNew
+export default BadgeEdit
 
-
-
->>>>>>> 9a9b4d8

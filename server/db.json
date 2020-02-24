@@ -2,21 +2,12 @@
   "badges": [
     {
       "id": "2de30c42-9deb-40fc-a41f-05e62b5939a7",
-      "firstName": "Freda",
-      "lastName": "Grady",
+      "firstName": "Aerogata",
+      "lastName": "Gatty",
       "email": "Leann_Berge@gmail.com",
       "jobTitle": "Legacy Brand Director",
-      "twitter": "FredaGrady22221-7573",
+      "twitter": "aerocat",
       "avatarUrl": "https://www.gravatar.com/avatar/f63a9c45aca0e7e7de0782a6b1dff40b?d=identicon"
-    },
-    {
-      "id": "d00d3614-101a-44ca-b6c2-0be075aeed3d",
-      "firstName": "Major",
-      "lastName": "Rodriguez",
-      "email": "Ilene66@hotmail.com",
-      "jobTitle": "Human Research Architect",
-      "twitter": "MajorRodriguez61545",
-      "avatarUrl": "https://www.gravatar.com/avatar/d57a8be8cb9219609905da25d5f3e50a?d=identicon"
     },
     {
       "id": "63c03386-33a2-4512-9ac1-354ad7bec5e9",
@@ -440,6 +431,38 @@
       "jobTitle": "Lawyer",
       "twitter": "ckaufmanpr",
       "id": "npaYZKI"
+    },
+    {
+      "firstName": "Emilia",
+      "lastName": "Santos",
+      "email": "emiliasantos@hotmail.com",
+      "jobTitle": "Lic. en Educación",
+      "twitter": "emiliasantos",
+      "id": "-JkuSqH"
+    },
+    {
+      "firstName": "Lulú",
+      "lastName": "Santos",
+      "email": "lulusantos@hotmail.com",
+      "jobTitle": "Casiperra",
+      "twitter": "casiperra",
+      "id": "lBdAmq2"
+    },
+    {
+      "firstName": "Jimi",
+      "lastName": "Tuzin",
+      "email": "jimituzin@gmail.com",
+      "jobTitle": "Lic. en Ladración",
+      "twitter": "ladrador",
+      "id": "50uhHTO"
+    },
+    {
+      "firstName": "Ozzy",
+      "lastName": "Cat",
+      "email": "ozzy@cat.com",
+      "jobTitle": "Autosexo",
+      "twitter": "mewmew",
+      "id": "OEpbcOT"
     }
   ]
 }

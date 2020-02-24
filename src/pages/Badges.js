@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './styles/Badges.css';
 import confLogo from '../images/badge-header.svg';
 import BadgesList from '../components/BadgesList';
+<<<<<<< HEAD
 
 class Badges extends React.Component {
   constructor(props) {
@@ -76,6 +77,50 @@ class Badges extends React.Component {
 
   render() {
     console.log('2/4. render()');
+=======
+import PageLoading from '../components/PageLoading';
+import PageError from '../components/PageError';
+import MiniLoader from '../components/MiniLoader';
+import api from '../api';
+
+class Badges extends React.Component {
+  state = {
+    loading: true,
+    error: null,
+    data: undefined,
+  };
+
+  componentDidMount() {
+    this.fetchData();
+
+    this.intervalId = setInterval(this.fetchData, 5000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.intervalId);
+  }
+
+  fetchData = async () => {
+    this.setState({ loading: true, error: null });
+
+    try {
+      const data = await api.badges.list();
+      this.setState({ loading: false, data: data });
+    } catch (error) {
+      this.setState({ loading: false, error: error });
+    }
+  };
+
+  render() {
+    if (this.state.loading === true && !this.state.data) {
+      return <PageLoading />;
+    }
+
+    if (this.state.error) {
+      return <PageError error={this.state.error} />;
+    }
+
+>>>>>>> 9a9b4d8
     return (
       <React.Fragment>
         <div className="Badges">
@@ -98,6 +143,11 @@ class Badges extends React.Component {
           </div>
 
           <BadgesList badges={this.state.data} />
+<<<<<<< HEAD
+=======
+
+          {this.state.loading && <MiniLoader />}
+>>>>>>> 9a9b4d8
         </div>
       </React.Fragment>
     );

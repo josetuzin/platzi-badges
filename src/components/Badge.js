@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 
 import './styles/Badge.css';
@@ -34,3 +35,54 @@ class Badge extends React.Component {
 }
 
 export default Badge;
+=======
+import React from 'react'
+
+import './styles/Badge.css'
+import confLogo from '../images/badge-header.svg'
+import Gravatar from './Gravatar'
+
+class Badge extends React.Component {
+    // Todos los componentes requieren de al menos 
+    // un método que es render(), que define el
+    // resultado de lo que vamos a ver en pantalla.
+
+    render() {
+
+        //this.props
+
+        return (
+            <div className="Badge">
+                <div className="Badge__header">
+                    <img src={confLogo} alt="Logo de la conferencia"/>
+                </div>
+
+                <div className="Badge__section-name">
+                    <Gravatar 
+                        className="Badge__avatar" 
+                        email={this.props.email}  
+                        alt="Avatar" 
+                    />
+                    <h1>{this.props.firstName} <br/>{this.props.lastName}</h1>
+                </div>
+
+                <div className="Badge__section-info">
+                    <h3>{this.props.jobTitle}</h3>
+                    <div>@{this.props.twitter}</div>
+                </div>
+
+                <div className="Badge__footer">
+                    <p>#platziconf</p>
+                </div>
+
+            </div>
+        )
+    }
+
+}
+
+// como estamos en un archivo, tenemos 
+// que asegurarnos de exportar el componente
+
+export default Badge
+>>>>>>> 9a9b4d8
